@@ -18,7 +18,7 @@ module ActiveAdmin
         puts "before: #{name}"
 
         if name =~ /device_accreditations/
-          name.concat '_id_in'
+          name.concat '_id'
         else
           name.concat '_id' if reflection
           name.concat multiple? ? '_in' : '_eq'

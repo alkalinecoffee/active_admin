@@ -13,11 +13,15 @@ module ActiveAdmin
 
         name = method.to_s
 
+        10.times { puts "\n" }
+
         if name =~ /device_accreditation/i
           name.concat '_id_in'
         else
-          
+
         end
+
+        p name
         # name.concat '_id' if reflection
         # name.concat multiple? ? '_in' : '_eq'
       end

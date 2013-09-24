@@ -12,8 +12,19 @@ module ActiveAdmin
         return method if @object.respond_to? method
 
         name = method.to_s
+
+        10.times { puts "\n" }
+
+        puts "before: #{name}"
+        
         name.concat '_id' if reflection
         name.concat multiple? ? '_in' : '_eq'
+
+        10.times { puts "\n" }
+
+        puts "after: #{name}"
+
+        name
       end
 
       # Include the "Any" option if it's a dropdown, but not if it's a multi-select.

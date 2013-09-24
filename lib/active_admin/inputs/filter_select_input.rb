@@ -16,9 +16,13 @@ module ActiveAdmin
         10.times { puts "\n" }
 
         puts "before: #{name}"
-        
-        name.concat '_id' if reflection
-        name.concat multiple? ? '_in' : '_eq'
+
+        if name =~ /device_accreditations/
+          name.concat '_id_in'
+        else
+          name.concat '_id' if reflection
+          name.concat multiple? ? '_in' : '_eq'
+        end
 
         10.times { puts "\n" }
 

@@ -12,8 +12,14 @@ module ActiveAdmin
         return method if @object.respond_to? method
 
         name = method.to_s
-        name.concat '_id' if reflection
-        name.concat multiple? ? '_in' : '_eq'
+
+        if name =~ /device_accreditation/i
+          name.concat '_id_in'
+        else
+          
+        end
+        # name.concat '_id' if reflection
+        # name.concat multiple? ? '_in' : '_eq'
       end
 
       # Provide the AA translation to the blank input field.
